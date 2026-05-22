@@ -3,7 +3,7 @@ import xadrez.pieces.*;
 
 public class Board {
     private Piece[][] board = new Piece[8][8];
-
+    
     public void fillBoard() {
         board[0][0] = new Rook(false);
         board[0][7] = new Rook(false);
