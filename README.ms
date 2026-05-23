@@ -3,12 +3,12 @@ Trabalho da disciplina de Programação Orientada a Objetos ministrada pelo prof
 Implementação Inicial (até 22/05):
 
 - movimentações:
-	[] movimentação básica pião
+	[X] movimentação básica peão
 	[] movimentação básica torre
 	[] movimentação básica cavalo
 	[] movimentação básica bispo
-	[] movimentação básica rainha
-	[] movimentação básica rei
+	[X] movimentação básica rainha
+	[X] movimentação básica rei
 
 - inteface gráfica:
 	[] representação gráfica do tabuleiro

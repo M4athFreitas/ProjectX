@@ -6,6 +6,7 @@ import java.util.List;
 public abstract class Piece {
 	protected boolean isWhite;			// cor da peça (true = branco)
 	protected boolean movement_loop;	// true para peças deslizantes (torre, bispo, dama)
+	protected boolean canJump;			// true para peças que pulam (cavalo) — dispensa checagem de caminho
 	protected boolean moved = false;	// vira true depois do primeiro movimento
 
 	// baseMovements: movimentos sempre disponíveis (ex.: peão avança 1)
@@ -13,16 +14,28 @@ public abstract class Piece {
 	protected List<Movement> baseMovements = new ArrayList<>();
 	protected List<Movement> specialMovements = new ArrayList<>();
 
+	// Construtor curto: assume canJump = false (caso comum, todas exceto cavalo)
 	Piece(boolean isWhite, boolean movementLoop) {
+		this(isWhite, movementLoop, false);
+	}
+
+	Piece(boolean isWhite, boolean movementLoop, boolean canJump) {
 		this.isWhite = isWhite;
 		this.movement_loop = movementLoop;
+		this.canJump = canJump;
 	}
 
 	public boolean isMoved() { return moved; }		// Getter: a peça já se mexeu pelo menos uma vez?
 	public void setMoved() { this.moved = true; }	// Marca a peça como já tendo se movido.
 
+	// Getter de cor — usado pelo check_move pra distinguir aliada x inimiga no destino.
+	public boolean isWhite() { return isWhite; }
+
 	// Getter para o check_move saber se essa peça desliza (rook, bishop, queen)
 	public boolean isMovement_loop() { return movement_loop;}
+
+	// Getter para o check_move pular a verificação de obstáculos no caminho
+	public boolean canJump() { return canJump; }
 
 	// Devolve a lista completa de movimentos disponíveis NESTE MOMENTO.
 	// Monta uma cópia da base e, se a peça nunca se moveu, agrega os especiais.
