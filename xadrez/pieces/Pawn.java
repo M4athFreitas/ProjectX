@@ -1,7 +1,5 @@
 package xadrez.pieces;
 
-import java.util.List;
-
 public class Pawn extends Piece {
     public Pawn(boolean isWhite) {
         // movement_loop = false porque o peão tem alcance fixo (não desliza).

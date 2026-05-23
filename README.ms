@@ -4,11 +4,12 @@ Implementação Inicial (até 22/05):
 
 - movimentações:
 	[X] movimentação básica peão
-	[] movimentação básica torre
-	[] movimentação básica cavalo
-	[] movimentação básica bispo
+	[X] movimentação básica torre
+	[X] movimentação básica cavalo
+	[X] movimentação básica bispo
 	[X] movimentação básica rainha
 	[X] movimentação básica rei
+	[X] validador de movimento (check_move): geometria + cor + MoveType + caminho livre
 
 - inteface gráfica:
 	[] representação gráfica do tabuleiro
